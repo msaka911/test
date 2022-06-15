@@ -36,13 +36,15 @@ const Login=()=>{
             displayName: username.current.value,
             displayDate: value.toISOString().split('T')[0]
         }
-
+        
         const axios = require('axios');
         await axios.post('https://wemi-round2-server.herokuapp.com/round2/authentication',
         bodyParameters,
         ).then((response)=>{
             dispatch(stateActions.setState(true));
             dispatch(stateActions.setToken(response.data.access_token))
+            dispatch(stateActions.setUsername(username.current.value));
+            dispatch(stateActions.setDate(value.toISOString().split('T')[0]));
             navigate('/main');
             }
         ).catch((e)=>{

@@ -5,6 +5,8 @@ const stateSlice = createSlice({
   name: 'loggedin',
   initialState: {
       loggedin:false,
+      username:"",
+      date:"",
       token:"",
       items:null,  },
   reducers: {
@@ -17,6 +19,12 @@ const stateSlice = createSlice({
     setItems(state,action){
       state.items=action.payload
     },
+    setUsername(state,action){
+        state.username=action.payload
+    },
+    setDate(state,action){
+        state.date=action.payload
+    }
   },
 });
 

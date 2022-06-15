@@ -19,7 +19,6 @@ function App() {
       <Routes>
         {isLoggedin?<Route path='/main' element={<Main/>}/>:<Route path='*' element={<Login/>}/>}
         {isLoggedin?<Route path='/main' element={<Main/>}/>:null}
-        {/* <Route path='*' element={<NotFound/>}/> */}
       </Routes>
       </Footer>
   );
